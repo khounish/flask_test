@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         NEW_VERSION = "1.1.0"
+        def scannerHome = tool 'SonarQube'
     }
 
     stages {
@@ -24,7 +25,7 @@ pipeline {
             
             steps {
                 echo 'building app'
-                echo 'VERSION in environment = ${NEW_VERSION}'
+                echo "VERSION in environment = ${NEW_VERSION}"
                 sh 'pip install -r requirements.txt'
             }
 
@@ -41,14 +42,14 @@ pipeline {
             }
 
             steps {
-                echo 'testing app'
+                echo 'Testing app......'
             }
 
         }
 
         stage('SonarQube Analysis') {
             steps {
-                def scannerHome = tool 'SonarQube'
+                echo 'SonarQube Analysis.....'
                 withSonarQubeEnv('SonarQube') {
                 sh "${scannerHome}/bin/sonar-scanner"
                 }
