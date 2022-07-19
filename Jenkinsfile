@@ -59,7 +59,7 @@ pipeline {
                 // -D sonar.host.url=http://localhost:9000/
                 // """
 
-                sh """docker run --rm -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner -D sonar.login="squ_22e9660dfd1b95aa043a05ecb5aafc817fd0c73f" -D sonar.host.url=http://sonarqube.americaniche.com"""
+                sh """docker run --rm -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner -D sonar.login="squ_22e9660dfd1b95aa043a05ecb5aafc817fd0c73f" -D sonar.language=python -D sonar.host.url=http://sonarqube.americaniche.com"""
              
 
                 }
