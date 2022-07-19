@@ -51,13 +51,15 @@ pipeline {
             steps {
                 echo 'SonarQube Analysis.....'
                 withSonarQubeEnv('SonarQube') {
-                sh """${scannerHome}/bin/sonar-scanner
-                -D sonar.login=admin \
-                -D sonar.password=deepu08092000 \
-                -D sonar.sourceEncoding=UTF-8 \
-                -D sonar.language=python \
-                -D sonar.host.url=http://localhost:9000/
-                """
+                // sh """${scannerHome}/bin/sonar-scanner
+                // -D sonar.login=admin \
+                // -D sonar.password=deepu08092000 \
+                // -D sonar.sourceEncoding=UTF-8 \
+                // -D sonar.language=python \
+                // -D sonar.host.url=http://localhost:9000/
+                // """
+
+                sh "docker run -ti -v $(pwd):/root/src --link sonarqube newtmitch/sonar-scanner"
                 }
             }
         }
