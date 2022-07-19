@@ -60,8 +60,7 @@ pipeline {
                 // """
 
                 sh """docker run --rm -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner
-                -D sonar.login=admin \
-                -D sonar.password=QazPlm))11F \
+                -D sonar.login="squ_22e9660dfd1b95aa043a05ecb5aafc817fd0c73f" \
                 -D sonar.host.url=https://sonarqube.americaniche.com
                 """
 
