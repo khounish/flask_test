@@ -60,6 +60,7 @@ pipeline {
                 // """
 
                 sh "docker run -ti -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner"
+
                 }
             }
         }
