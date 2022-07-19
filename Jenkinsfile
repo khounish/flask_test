@@ -59,7 +59,7 @@ pipeline {
                 // -D sonar.host.url=http://localhost:9000/
                 // """
 
-                sh "docker run -ti -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner"
+                sh "docker run -d -v \$(pwd):/root/src --link sonarqube newtmitch/sonar-scanner sonar-scanner"
 
                 }
             }
