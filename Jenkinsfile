@@ -34,7 +34,7 @@ pipeline {
             when {
                 
                 expression {
-                    env.BRANCH_NAME != ""
+                    env.BRANCH_NAME != "main"
                 }
 
             }
@@ -49,7 +49,7 @@ pipeline {
             
             steps {
                 echo 'deploying app'
-                sh 'flask run'
+                // sh 'flask run'
             }
 
         }
