@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         NEW_VERSION = "1.1.0"
-        def scannerHome = tool 'sonar'
+        def scannerHome = tool 'SonarQube'
     }
 
     stages {
