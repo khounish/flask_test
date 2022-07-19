@@ -1,8 +1,6 @@
 //ALL environmental vars which jenkins provide are at jenkinsurl/env-vars.html
 //http://cicdjenkinsnj.americaniche.com/env-vars.html/
 
-CODE_CHANGES = getGitChanges()
-
 pipeline {
 
     agent any
@@ -18,7 +16,7 @@ pipeline {
             when {
                 
                 expression {
-                    env.BRANCH_NAME != "" && CODE_CHANGES == true
+                    env.BRANCH_NAME != ""
                 }
 
             }
